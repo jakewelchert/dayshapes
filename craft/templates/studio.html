@@ -1,0 +1,145 @@
+{#
+ # About template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+	<section class="copyblock gray">
+		<div class="content">
+			<h4>Hey there.</h4>
+			<h2>Fight for the little guy. We're an independent, hard-working creative studio based in Omaha, NE. We specialize in identity design and brand development, as well as web and product design.</h2>
+		</div>
+	</section>
+
+	<img class="twelve colmuns" src="img/our-studio.png">
+	
+	<section class='border'>					
+		<div class="container">
+			<div class="row">
+				Services						
+			</div>
+		</div>
+	</section>
+
+	
+	<div class="container">
+		<div class="row">
+			<div class="six columns">
+				<h2>Visual Identity</h2>
+				<p>Thoughtful branding is essential to uniquely positioning your business in the competitive marketplace. We work closely to conceive of a comprehensive brand identity that will serve your short and long-term needs. We will research, brainstorm, design, and develop a proprietary solution that will uniquely and effectively represent you and your company values.</p>	
+				<h4>identity design</h4>
+				<h4>art direction & photography</h4>
+				<h4>creative direction</h4>
+				<h4>strategy</h4>
+				<h4>typography</h4>
+				<h4>color theory</h4>
+				<h4>naming</h4>
+			</div>
+
+			<div class="six columns">
+				<h2>Digital Design</h2>
+				<p>Digital innovation has never been more exciting, and we are increasingly passionate about the ability to make an impact through our expertise in digital product design. We work iteratively to balance research, content strategy, user experience, user interface, interaction design, semantics, and creative direction into what we feel makes a thoughtful and top-tier digital experience.</p>	
+				<h4>web</h4>
+				<h4>mobile</h4>
+				<h4>app design</h4>
+				<h4>ui, ux, and product design</h4>
+				<h4>interaction and prototyping</h4>
+				<h4>web and mobile development</h4>
+				</h4>
+				</br>
+
+			</div>
+		</div>
+
+		<div class="row">
+			We're also hired for other things like...						
+		</div>
+	</div>
+
+			
+	<section>					
+		<div class="container">
+			<div class="row">
+				<div class="three columns">
+					<ul>
+						<h4>Consultancy</h4>
+						<li>• Concepting</li>
+						<li>• Naming</li>
+						<li>• Photography</li>
+						<li>• Art Direction</li>
+					</ul>
+				</div>
+				<div class="three columns">
+					<ul>
+						<h4>Print Design</h4>
+						<li>• Stationery</li>
+						<li>• Annual Report</li>
+						<li>• Book / Catalog</li>
+						<li>• Posters</li>
+						<li>• Illustration</li>
+						<li>• Signage</li>
+					</ul>
+				</div>
+
+				<div class="three columns">
+					<ul>
+						<h4>Digital Design</h4>
+						<li>• User Experience (UX)</li>
+						<li>• User Interface (UI)</li>
+						<li>• Web Design</li>
+						<li>• Product Design</li>
+						<li>• Ecommerce</li>
+						<li>• Social Media</li>
+					</ul>
+				</div>
+				<div class="three columns">
+					<ul>
+						<h4>Web Development</h4>
+						<li>• Front-end</li>
+						<li>• CMS Implementation</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class='border'>					
+		<div class="container">
+			<div class="row">
+			We call Omaha home.						
+			</div>
+		</div>
+	</section>
+	
+	<img class="twelve colmuns" src="img/our-studio.png">
+
+	<section class='border'>					
+		<div class="container">
+			<div class="row">
+				Testimonials						
+			</div>
+		</div>
+	</section>
+	<section class="copy-block big-text">
+		<div class="content">
+			<h2>Yep, yep, and yep.</h2>
+			<h4>Megan Feeley  /  American Spoon</h4>
+		</div>
+	</section>
+{% endblock %}

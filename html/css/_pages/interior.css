@@ -1,0 +1,58 @@
+.interior_header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: red;
+}
+
+.interior_header h1 {
+  color: white;
+  padding-bottom: 20px;
+}
+/*
+@media (min-width: 800px) {
+  .interior_header {
+    padding: 250px 0 250px;
+  }
+}*/
+
+.interior_header .container {
+  top: 50%;
+  transform: translate(0, -50%) 
+}
+
+
+.pagination {
+  position: relative;
+  background-image: url('../../img/thumbnails/trnk_thumb.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 300px;
+}
+
+.pagination h6 {
+  line-height: 300px;
+}
+
+.pagination_overlay {
+  background-color: #2752ff;
+	position: absolute;
+  -webkit-transition: all 800ms cubic-bezier(.77,0,.175,1);
+  -moz-transition: all 800ms cubic-bezier(.77,0,.175,1);
+  -o-transition: all 800ms cubic-bezier(.77,0,.175,1);
+  -ms-transition: all 800ms cubic-bezier(.77,0,.175,1);
+  text-align: left;
+  height: 100%;
+  width: 100%;
+}
+s
+.pagination_overlay:last-child {
+}
+
+.pagination_overlay:hover {
+  background-color: rgba(255,255,255,.5);
+}

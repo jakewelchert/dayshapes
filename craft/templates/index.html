@@ -1,0 +1,196 @@
+{#
+ # Homepage template
+ # ---------------
+ #
+ # When this template gets loaded, it will be because someone has accessed
+ # http://yoursite.com/ (without any URI). Craft checks to see if you have
+ # a Single section set to be the Homepage (as you do, by default), and
+ # loads the section’s Template (this file). A special ‘entry’ variable
+ # will already be set for you, assigned to the Homepage entry.
+ #
+ # It's worth noting that even if you didn't have a Homepage Single section,
+ # as long as this template remains at craft/templates/index.html, it
+ # would still be the one to get loaded when accessing http://yoursite.com/,
+ # albeit without an ‘entry’ variable already set for you.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout" %}
+
+{% block content %}
+
+  	<div class="about">
+		<div class="arrow_down">&darr;</div>
+	</div>
+
+	<section class="copyblock gray">
+		<div class="content animate">
+			<h4>Hey there&mdash;</h4>
+			<h2>DayShapes is a hard-working, independent creative studio based in Omaha, NE. We specialize in identity design and brand development, as well as web and product design.</h2>
+			<h4 class="all"><a href="about.html"><span class='underline'>Learn More about Us</span> &rarr;</a></h4>
+		</div>
+	</section>
+
+
+	<section class="work_outer">
+
+		<div class="work">
+
+
+			{% for entry in craft.entries.section('projects').limit(3).find() %}
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">{{ entry.title }}</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+				</div>
+				<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+			        <img src="img/barcamp.png">
+				</a>
+			</div>
+			{% endfor %}
+
+
+
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">Barcamp 2015</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+				</div>
+				<a href="leasemaid.html" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+			        <img src="img/barcamp.png">
+				</a>
+			</div>
+
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">Barcamp 2015</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+				</div>
+				<a href="leasemaid.html" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+			        <img src="img/barcamp.png">
+				</a>
+			</div>
+
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">Barcamp 2015</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+				</div>
+				<a href="leasemaid.html" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+			        <img src="img/barcamp.png">
+				</a>
+			</div>
+
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">Barcamp 2015</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+				</div>
+				<a href="leasemaid.html" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+			        <img src="img/barcamp.png">
+				</a>
+			</div>
+
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">Barcamp 2015</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+				</div>
+				<a href="leasemaid.html" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+			        <img src="img/barcamp.png">
+				</a>
+			</div>
+
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">Barcamp 2015</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+				</div>
+				<a href="leasemaid.html" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+			        <img src="img/barcamp.png">
+				</a>
+			</div>
+
+			<div class="row">
+				<a class="twelve columns latest-btn latest" href="work.html"><button class="all">View All Of Our Past Projects</button></a>
+			</div>
+		</div>
+	</section>
+
+
+	<!--      JOURNAL      -->
+	<section class='row journal home animate'>
+		<div class="row latest journal_header">
+			<div class="eight offset-by-two columns">
+				<h4>Journal</h4>							
+				<h2>Here's what we've been up to.</h2>
+			</div>
+		</div>
+
+		<div class="container journal_inner">
+			{% for entry in craft.entries.section('journal').limit(3).find() %}
+			<a href="{{ entry.url }}">
+				<div class="jrnl_preview">
+					<div class='container'>
+					  	<div class="four columns">
+					    	<img src="img/photo2.jpeg">
+					  	</div>
+					  	<div class="seven columns">
+							<h4>{{ entry.postDate.format('F d, Y') }}</h4>
+					    	<h1><a href="">{{ entry.title }}</a></h1>
+					    	<p>{{ entry.body }}</p>        
+							<h4><a href="{{ entry.url }}"><span class='underline'>Read The Story</span> &rarr;</a></h4>
+					  	</div>
+					</div>
+				</div>
+			</a>
+			{% endfor %}
+			
+			<h4><a href="journal.html"><span class='underline'>View all journal entries</span> &rarr;</a></h4>
+		</div>
+	</section>
+{% endblock %}

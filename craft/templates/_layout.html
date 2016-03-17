@@ -1,0 +1,193 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/master.css"> <!-- CSS reset -->
+	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<link rel="home" href="{{ siteUrl }}" />
+</head>
+
+<body>
+
+	<div class="header" role="banner">
+		<a class="navicon-button x js-slideout-toggle"><div class="navicon"></div></a>
+		<!-- <a href="index.html"><img class="logo" src="img/dayshapes_horizontal.svg"></a> -->
+	</div>
+
+	<nav id="menu" class="menu">
+		<ul>	
+			<li><a href="{{ url('studio') }}" {% if craft.request.firstSegment == 'studio' %}class="active"{% endif %}>Studio</a></li>
+			<li><a href="{{ url('projects') }}" {% if craft.request.firstSegment == 'projects' %}class="active"{% endif %}>Projects</a></li>
+			<li><a href="{{ url('contact') }}" {% if craft.request.firstSegment == 'contact' %}class="active"{% endif %}>Contact</a></li>
+			<li><a href="{{ url('journal') }}" {% if craft.request.firstSegment == 'journal' %}class="active"{% endif %}>Journal</a></li>
+
+			<li class="projectthumbs">
+				<a href="barcamp2015.html">
+					<img src="img/thumbnails/barcamp_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="americanspoon.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="trnknyc.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="daoma.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="rivalhomes.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="ntopology.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="thrasher.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="flywheel.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="straightshot.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+			<li>
+				<a href="dwcontracting.html">
+					<img src="img/thumbnails/awwg_thumb.png">
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+
+	<main id="panel" class="panel">
+<!-- 	  	<div class="about">
+			<div class="arrow_down">&darr;</div>
+		</div>
+
+		<section class="copyblock gray">
+			<div class="content animate">
+				<h4>Hey there&mdash;</h4>
+				<h2>DayShapes is a hard-working, independent creative studio based in Omaha, NE. We specialize in identity design and brand development, as well as web and product design.</h2>
+				<h4 class="all"><a href="about.html"><span class='underline'>Learn More about Us</span> &rarr;</a></h4>
+			</div>
+		</section> -->
+
+
+
+		{% block content %}
+			<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+		{% endblock %}
+
+
+
+		<section class='row'>
+			<div class="fullsix pagination">
+				<a href="studio.html">
+					<div class="pagination_overlay">
+						<div class="container pagination-type">				
+						<h6>Studio</h6>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<div class="fullsix pagination">
+				<a href="contact.html">
+					<div class="pagination_overlay">
+						<div class="container pagination-type">				
+						<h6>Contact</h6>
+						</div>
+					</div>
+				</a>
+			</div>
+		</section>
+
+
+		<!--      FOOTER      -->
+		<footer>
+			<div class="container-work container">
+				<div class="two columns">
+					<img src="img/logo_d.svg" height="150px">
+				</div>
+				<div class="six offset-by-four columns">
+					<ul>
+						<h4>Browse</h4>
+						<li><a href="work.html">Work</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="ourprocess.html">Our Process</a></li>
+						<li><a href="journal.html">Journal</a></li>
+						<li><a href="shop.html">Shop</a></li>
+					</ul>
+					</br>
+					</br>
+					<ul>
+						<h4>Connect</h4>
+						<li><a href="Facebook">hello@daylus.co</a></li>
+						<li><a href="#">402-980-5368</a></li>
+						<li>_</li>
+						<li>5013 Underwood Ave.
+						</br>Omaha, NE 68104</li>
+					</ul>
+					</br>
+					</br>
+					<div class="foot_social">
+						<ul>									
+							<h4>We're on the web!</h4>
+							<li><a href="https://twitter.com/jakewelchert" target="_blank" class="fa fa-twitter"></a></li>
+						    <li><a href="https://www.facebook.com/jake.welchert" target="_blank" class="fa fa-facebook"></a></li>
+						    <li><a href="https://www.instagram.com/jakewelchert" target="_blank" class="fa fa-instagram"></a></li>
+						    <li><a href="http://dribbble.com/jakewelchert" target="_blank" class="fa fa-dribbble"></a></li>
+						    <li><a href="http://jakewelchert.tumblr.com" target="_blank" class="fa fa-linkedin"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<a href="#top">
+			<div class="back-top inner-top">
+				<div class="container">
+		 		<h4>&uarr; Back to the top</h4>
+				</div>
+		   </div>
+		</a>
+	</main>
+
+	<script src='js/menuslide.js'></script>
+	<script src='js/slideout.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='js/index.js'></script>
+	<script src="js/animate.js"></script>
+
+</body>
+</html>
