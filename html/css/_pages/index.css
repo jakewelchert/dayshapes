@@ -18,7 +18,15 @@
   background-color: #2752ff; 
 }
 
-.gray h2, .gray h4 {
+.green {
+  background-color: #2BDE73;
+}
+
+.teal {
+  background-color: #00e3e5;
+}
+
+.gray h2, .gray h4, .green h2, .green h4, .teal h2, .teal h4 {
   color: white;
 }
 
