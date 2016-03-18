@@ -24,21 +24,21 @@
 	<section class="copyblock black">
 		<div class='container'>
 			{% for entry in craft.entries.section('projects').find() %}
-				<div class="row animate">
-					<div class="label">
-						<h3 style="font-size: 100px;">{{ entry.title }}</h3>
-						<h4>Identity / Collateral / Product Design</h4>
-					</div>
-					<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
-						<div class="caption">
-							<h3> 
-							<span class="arrow">→</span>
-							<span class="view">View Project</span>
-							</h3>		        			        
-						</div>
-				        <img src="img/barcamp.png">
-					</a>
+			<div class="row animate">
+				<div class="label">
+					<h3 style="font-size: 100px;">{{ entry.title }}</h3>
+					<h4>Identity / Collateral / Product Design</h4>
 				</div>
+				<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
+					<div class="caption">
+						<h3> 
+						<span class="arrow">→</span>
+						<span class="view">View Project</span>
+						</h3>		        			        
+					</div>
+				    <img src='{{ entry.featuredImage[0].url }}'>
+				</a>
+			</div>
 			{% endfor %}
 		</div>
 	</section>
