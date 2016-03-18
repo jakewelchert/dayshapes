@@ -18,6 +18,11 @@
   background-color: #2752ff; 
 }
 
+.lightgray {
+  background-color: #f6f6f6; 
+}
+
+
 .green {
   background-color: #2BDE73;
 }
@@ -70,6 +75,7 @@
 
 .work h4 {
   padding-top: 5px;
+  color: #fff;
 }
 
 .featured-work {
@@ -98,7 +104,7 @@
   }
 
   .featured-work {
-    margin-bottom: 50px;
+    margin-bottom: 130px;
   }
 
   .btn.light {
@@ -133,7 +139,6 @@
 
 .journal_header {
   padding-bottom: 180px;
-  background-color: #f7f7f7;
 }
 
 .journal_inner {

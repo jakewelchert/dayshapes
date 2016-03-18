@@ -14,14 +14,14 @@
 {% set title = "Journal" %}
 
 {% block content %}
-	<section class="copyblock green">
+	<section class="copyblock lightgray">
 		<div class="content">
 			<h4>Journal</h4>
 			<h2>Our journal is the official record of life at DayShapes – a collection of assignments, ideas and experiences we can’t help but share.</h2>
 		</div>
 	</section>
 
-	<section class="copyblock-sm">
+	<section class="copyblock-sm lightgray">
 		<div class='container'>
 			{% for entry in craft.entries.section('journal').find() %}
 				<article class="jrnl_preview animate">

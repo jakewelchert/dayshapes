@@ -4,7 +4,7 @@
      -moz-transition: all 0.4s;
           transition: all 0.4s;
   background-color: #fff;
-  border: 20px solid #f7f7f7;
+  /*border: 20px solid #f7f7f7;*/
   margin-bottom: 50px;
 
 }
@@ -16,7 +16,7 @@
 
 .home .jrnl_preview {
   margin-bottom: 50px;
-  border: 20px solid #f7f7f7;
+  /*border: 20px solid #f7f7f7;*/
 }
 
 .jrnl_preview:hover {
@@ -45,15 +45,21 @@
 .jrnl_preview {
 }
 
-.jrnl_preview img {
+/*.jrnl_preview img {
     width: 80%;
     height: 80%;
     border-radius: 60%;
     margin-bottom: 0;
+}*/
+
+.jrnl_preview img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
 }
 
 .jrnl_preview {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 }
 
@@ -99,4 +105,51 @@
 
 .jrnl_post-container img {
     margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.jrnl_preview2 {
+  position: relative;
+  padding: 0;
+  background-color: #fff;
+}
+
+.jrnl_preview2:hover {
+  box-shadow: 0 0 10px rgba(50,50,50,.15);
+  background-color: #2BDE73;
+}
+
+.jrnl_tab {
+  position: absolute;
+  /*background-color: red;*/
+  float: left;
+  top: 0;
+  right: 0;
+  width: 60%;
+  /*width: calc(100% - 400px);*/
+  height: 100%;
+  box-sizing: border-box;
+  padding: 50px 30px 0 50px;
+}
+
+.jrnl_preview2-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: auto;
+  position: relative;
+  background: url("../../img/photo2.jpg") no-repeat center center;
+  background-size: cover;
+  width: 40%;
+  height: 400px;
 }

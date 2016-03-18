@@ -21,6 +21,10 @@
     right: 70px;
 }
 
+.view:hover {
+    color: blue;
+}
+
 .featured-work:hover {
 }
 
