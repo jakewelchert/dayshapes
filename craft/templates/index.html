@@ -50,7 +50,7 @@
 						<span class="view">View Project</span>
 						</h3>		        			        
 					</div>
-			        <img src="img/spoon.png">
+				    <img src='{{ entry.featuredImage[0].url }}'>
 				</a>
 			</div>
 			{% endfor %}
@@ -67,7 +67,7 @@
 	<section class='copyblock-sm lightgray'>
 		<div class="row latest journal_header">
 			<div class="eight offset-by-two columns animate">
-				<h4>Journal</h4>							
+				<h4>Journal</h4>						
 				<h2>Here's what we've been up to.</h2>
 			</div>
 		</div>
@@ -90,14 +90,13 @@
 
 				  	<div class="jrnl_tab">
 						<h4>{{ entry.postDate.format('F d, Y') }}</h4>
-				    	<h1><a href="">{{ entry.title }}</a></h1>
+				    	<h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
 				    	<p>{{ entry.body }}</p>        
 						<h4><a href="{{ entry.url }}"><span class='underline'>Read The Story</span> &rarr;</a></h4>
 				  	</div>
 
 				</div>
 			</a>
-
 
 			{% endfor %}
 			
