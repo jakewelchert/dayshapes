@@ -16,6 +16,10 @@
     padding: 100px 30px 30px;
 }
 
+.copyblock-sm {
+    padding: 50px 30px 30px;
+}
+
   .copyblock h2 {
   font-size: 2.5rem
   }
@@ -33,6 +37,10 @@
 @media (min-width: 1200px) {
   .copyblock {
   padding: 12em 0px;
+  }
+
+  .copyblock-sm {
+  padding: 4em 0px 2em;
   }
 
   .copyblock h2 {

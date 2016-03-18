@@ -14,29 +14,31 @@
 {% set title = "Journal" %}
 
 {% block content %}
-	<section class="copyblock gray">
+	<section class="copyblock green">
 		<div class="content">
 			<h4>Journal</h4>
 			<h2>Our journal is the official record of life at DayShapes – a collection of assignments, ideas and experiences we can’t help but share.</h2>
 		</div>
 	</section>
 
-	<section class='journal container'>
-		{% for entry in craft.entries.section('journal').find() %}
-			<article class="jrnl_preview">
-				<div class='container'>
-							
-				  	<div class="four columns">
-				    	<img src="img/photo2.jpeg">
-				  	</div>
+	<section class="copyblock-sm">
+		<div class='container'>
+			{% for entry in craft.entries.section('journal').find() %}
+				<article class="jrnl_preview animate">
+					<div class='container'>
+								
+					  	<div class="four columns">
+					    	<img src="img/photo2.jpeg">
+					  	</div>
 
-					<h4>{{ entry.postDate.format('F d, Y') }}</h4>
-					<h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
-					{{ entry.body.getPage(1) }}
-					<h4><a href="{{ entry.url }}"><span class='underline'>Read The Story</span> &rarr;</a></h4>
-			
-			</article>
-		{% endfor %}
+						<h4>{{ entry.postDate.format('F d, Y') }}</h4>
+						<h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+						{{ entry.body.getPage(1) }}
+						<h4><a href="{{ entry.url }}"><span class='underline'>Read The Story</span> &rarr;</a></h4>
+				
+				</article>
+			{% endfor %}
+		</div>
 	</section>
 
 {% endblock %}

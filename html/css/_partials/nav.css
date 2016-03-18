@@ -94,7 +94,7 @@ nav a:hover {
   position: relative;
   width: 2.5em;
   height: .3125rem;
-  background: blue;
+  background: black;
   transition: 0.5s;
   border-radius: 2.5rem;
 }
@@ -103,7 +103,7 @@ nav a:hover {
   content: "";
   height: .3125rem;
   width: 2.5rem;
-  background: blue;
+  background: black;
   position: absolute;
   z-index: -1;
   transition: 0.5s 0.25s;

@@ -21,22 +21,26 @@
 		</div>
 	</section>
 
-	<section class='projects container'>
-		{% for entry in craft.entries.section('projects').find() %}
-			<article class="jrnl_preview">
-				<div class='container'>
-							
-				  	<div class="four columns">
-				    	<img src="img/photo2.jpeg">
-				  	</div>
-
-					<h4>{{ entry.postDate.format('F d, Y') }}</h4>
-					<h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
-					{{ entry.body.getPage(1) }}
-					<h4><a href="{{ entry.url }}"><span class='underline'>Read The Story</span> &rarr;</a></h4>
-			
-			</article>
-		{% endfor %}
+	<section class="copyblock black">
+		<div class='container'>
+			{% for entry in craft.entries.section('projects').find() %}
+				<div class="row animate">
+					<div class="label">
+						<h3 style="font-size: 100px;">{{ entry.title }}</h3>
+						<h4>Identity / Collateral / Product Design</h4>
+					</div>
+					<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
+						<div class="caption">
+							<h3> 
+							<span class="arrow">→</span>
+							<span class="view">View Project</span>
+							</h3>		        			        
+						</div>
+				        <img src="img/barcamp.png">
+					</a>
+				</div>
+			{% endfor %}
+		</div>
 	</section>
 
 {% endblock %}

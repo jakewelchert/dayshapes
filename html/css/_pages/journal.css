@@ -4,7 +4,7 @@
      -moz-transition: all 0.4s;
           transition: all 0.4s;
   background-color: #fff;
-  border: 20px solid #2752ff;
+  border: 20px solid #f7f7f7;
   margin-bottom: 50px;
 
 }
@@ -16,7 +16,7 @@
 
 .home .jrnl_preview {
   margin-bottom: 50px;
-  border: 20px solid #2752ff;
+  border: 20px solid #f7f7f7;
 }
 
 .jrnl_preview:hover {

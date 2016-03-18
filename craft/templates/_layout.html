@@ -24,13 +24,13 @@
 
 	<div class="header" role="banner">
 		<a class="navicon-button x js-slideout-toggle"><div class="navicon"></div></a>
-		<!-- <a href="index.html"><img class="logo" src="img/dayshapes_horizontal.svg"></a> -->
+		<a href="index.html"><img class="logo" src="img/dayshapes_horizontal.svg"></a>
 	</div>
 
 	<nav id="menu" class="menu">
 		<ul>	
-			<li><a href="{{ url('studio') }}" {% if craft.request.firstSegment == 'studio' %}class="active"{% endif %}>Studio</a></li>
 			<li><a href="{{ url('projects') }}" {% if craft.request.firstSegment == 'projects' %}class="active"{% endif %}>Projects</a></li>
+			<li><a href="{{ url('studio') }}" {% if craft.request.firstSegment == 'studio' %}class="active"{% endif %}>Studio</a></li>
 			<li><a href="{{ url('contact') }}" {% if craft.request.firstSegment == 'contact' %}class="active"{% endif %}>Contact</a></li>
 			<li><a href="{{ url('journal') }}" {% if craft.request.firstSegment == 'journal' %}class="active"{% endif %}>Journal</a></li>
 
@@ -107,31 +107,6 @@
 			<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
 		{% endblock %}
-
-
-
-		<section class='row'>
-			<div class="fullsix pagination">
-				<a href="studio.html">
-					<div class="pagination_overlay">
-						<div class="container pagination-type">				
-						<h6>Studio</h6>
-						</div>
-					</div>
-				</a>
-			</div>
-
-			<div class="fullsix pagination">
-				<a href="contact.html">
-					<div class="pagination_overlay">
-						<div class="container pagination-type">				
-						<h6>Contact</h6>
-						</div>
-					</div>
-				</a>
-			</div>
-		</section>
-
 
 		<!--      FOOTER      -->
 		<footer>

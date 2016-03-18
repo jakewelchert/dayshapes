@@ -26,7 +26,12 @@
   background-color: #00e3e5;
 }
 
-.gray h2, .gray h4, .green h2, .green h4, .teal h2, .teal h4 {
+.black {
+  background-color: black;
+  color: #fff;
+}
+
+.gray h2, .gray h4, .green h2, .green h4, .teal h2, .teal h4, .black h2, .black h4 {
   color: white;
 }
 
@@ -127,9 +132,8 @@
 
 
 .journal_header {
-  color: #fff;
-  background-color: #000;
   padding-bottom: 180px;
+  background-color: #f7f7f7;
 }
 
 .journal_inner {
