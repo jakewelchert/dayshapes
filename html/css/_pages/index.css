@@ -1,7 +1,6 @@
 .label {
   position: absolute;
-  z-index: 1000;
-  height: 100%;
+  z-index: 1;
   margin-top: 13%;
   color: #fff;
 }

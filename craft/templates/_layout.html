@@ -34,56 +34,16 @@
 			<li><a href="{{ url('contact') }}" {% if craft.request.firstSegment == 'contact' %}class="active"{% endif %}>Contact</a></li>
 			<li><a href="{{ url('journal') }}" {% if craft.request.firstSegment == 'journal' %}class="active"{% endif %}>Journal</a></li>
 
+
+			{% for entry in craft.entries.section('projects').find() %}
 			<li class="projectthumbs">
-				<a href="barcamp2015.html">
-					<img src="img/thumbnails/barcamp_thumb.png">
+				<a href="{{ entry.url }}">
+					<h3>{{ entry.title }}</h3>
+					<h4>Identity / Collateral / Product Design</h4>
+					<img src='{{ entry.featuredImage[0].url }}'>
 				</a>
 			</li>
-			<li>
-				<a href="americanspoon.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="trnknyc.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="daoma.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="rivalhomes.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="ntopology.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="thrasher.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="flywheel.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="straightshot.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
-			<li>
-				<a href="dwcontracting.html">
-					<img src="img/thumbnails/awwg_thumb.png">
-				</a>
-			</li>
+			{% endfor %}
 		</ul>
 	</nav>
 
