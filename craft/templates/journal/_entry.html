@@ -17,8 +17,27 @@
 
 {% block content %}
 	<article>
-		<h1>{{ entry.title }}</h1>
-		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-		{{ entry.body }}
+		<div class="jrnl_post-header" style="background-image: url({{ entry.featuredImage[0].url }})">
+			<div class="jrnl_post-header-intro">
+			  <div class='container'>
+				<p class="eight columns offset-by-two">{{ entry.postDate.format('F d, Y') }}</p>
+			    <h2 class="eight columns offset-by-two">{{ entry.title }}</h2>
+			  </div>
+			</div>
+		</div>
+
+		<section>
+			<div class='container jrnl_post-container'>
+			  <div class="row">
+			    <div class="eight columns offset-by-two">
+				{{ entry.body }}
+			    </div>
+			  </div>
+			</div>
+		</section>
+
 	</article>
 {% endblock %}
+
+
+

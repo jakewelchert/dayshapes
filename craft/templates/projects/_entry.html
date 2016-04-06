@@ -14,11 +14,36 @@
  #}
 
 {% extends "_layout" %}
+{% set title = "{{ entry.title }}" %}
 
 {% block content %}
-	<article>
-		<h1>{{ entry.title }}</h1>
-		<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
-		{{ entry.body }}
-	</article>
+    <div class="interior_header" style="background-color: {{ entry.projectIntroColor }}">
+    	<div class="container">
+			<div class="row">
+				<div class="eight offset-by-two columns">
+					<h1>{{ entry.title }}</h1>
+					<p>{{ entry.projectIntro }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="arrow_down">&darr;</div>
+	</div>
+
+<!-- 	<section class='animate' style="background-color: white">
+		<div class="container">
+			<div class="twelve columns">
+				{{ entry.body }}
+			</div>
+		</div>
+	</section>
+ -->
+	<section class='animate' style="background-color: white">
+		<img src='{{ entry.projectImages[1].url }}'>
+		<img src='{{ entry.projectImages[2].url }}'>
+		<img src='{{ entry.projectImages[3].url }}'>
+		<img src='{{ entry.projectImages[4].url }}'>
+		<img src='{{ entry.projectImages[5].url }}'>
+		<img src='{{ entry.projectImages[6].url }}'>
+	</section>
+	
 {% endblock %}

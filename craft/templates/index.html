@@ -41,7 +41,8 @@
 			<div class="row animate">
 				<div class="label">
 					<h3 style="font-size: 100px;">{{ entry.title }}</h3>
-					<h4>Identity / Collateral / Product Design</h4>
+					<h4>{{ projectTypes }}</h4>
+					<!-- <h4>Identity / Collateral / Product Design</h4> -->
 				</div>
 				<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
 					<div class="caption">
@@ -56,7 +57,7 @@
 			{% endfor %}
 
 			<div class="row">
-				<h4><a href="journal.html"><span class='underline'>View all projects</span> &rarr;</a></h4>
+				<h4><a href="{{ url('projects') }}"><span class='underline'>View all projects</span> &rarr;</a></h4>
 			</div>
 
 		</div>
@@ -82,11 +83,10 @@
 		<div class="container journal_inner">
 			{% for entry in craft.entries.section('journal').limit(3).find() %}
 
-
 			<a href="{{ entry.url }}">
 				<div class='jrnl_preview2 animate row'>
 
-				  	<div class="jrnl_preview2-image"></div>
+					<div class="jrnl_preview2-image" style="background-image: url({{ entry.featuredImage[0].url }})"></div>
 
 				  	<div class="jrnl_tab">
 						<h4>{{ entry.postDate.format('F d, Y') }}</h4>
@@ -100,7 +100,7 @@
 
 			{% endfor %}
 			
-			<h4><a href="journal.html"><span class='underline'>View all journal entries</span> &rarr;</a></h4>
+			<h4><a href="{{ url('journal') }}"><span class='underline'>View all journal entries</span> &rarr;</a></h4>
 		</div>
 
 
