@@ -4,7 +4,6 @@
      -moz-transition: all 0.4s;
           transition: all 0.4s;
   background-color: #fff;
-  /*border: 20px solid #f7f7f7;*/
   margin-bottom: 50px;
 
 }
@@ -122,6 +121,7 @@
   position: relative;
   padding: 0;
   background-color: #fff;
+  margin-bottom: 50px;
 }
 
 .jrnl_preview2:hover {

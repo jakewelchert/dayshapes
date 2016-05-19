@@ -45,5 +45,33 @@
 		<img src='{{ entry.projectImages[5].url }}'>
 		<img src='{{ entry.projectImages[6].url }}'>
 	</section>
-	
+
+
+
+
+{% set options = {
+      'title': 'foo',
+      'url': 'http://google.com',
+      'content': {
+        'facebook': {
+          'item-type': 'image',
+          'value': 'http://img2.wikia.nocookie.net/__cb20130501121248/logopedia/images/f/fb/Facebook_icon_2013.svg',
+          'class': 'fb',
+          'size': {
+            'width': '40px',
+            'height': '40px'
+          }
+        },
+        'twitter': {
+          'item-type': 'text',
+          'value': 'Twitter',
+          'class': 'twitter',
+          'id': 'twitter'
+        },
+      }
+    }
+  %}
+
+{{ jSocialButtons('facebook|twitter|email', options) }}
+
 {% endblock %}

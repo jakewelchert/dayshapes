@@ -43,4 +43,26 @@
 		</div>
 	</section>
 
+	<section class='row'>
+		<div class="fullsix pagination">
+			<a href="{{ url('journal') }}" {% if craft.request.firstSegment == 'projects' %}class="active"{% endif %}>
+				<div class="pagination_overlay">
+					<div class="container pagination-type">				
+					<h6>Journal</h6>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="fullsix pagination">
+			<a href="{{ url('studio') }}" {% if craft.request.firstSegment == 'contact' %}class="active"{% endif %}>
+				<div class="pagination_overlay">
+					<div class="container pagination-type">				
+					<h6>Studio</h6>
+					</div>
+				</div>
+			</a>
+		</div>
+	</section>
+
 {% endblock %}

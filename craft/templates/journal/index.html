@@ -25,8 +25,7 @@
 		<div class='container'>
 			{% for entry in craft.entries.section('journal').find() %}
 				<a href="{{ entry.url }}">
-					<div class='jrnl_preview2 animate row'>
-
+					<div class='jrnl_preview2 animate'>
 						<div class="jrnl_preview2-image" style="background-image: url({{ entry.featuredImage[0].url }})"></div>
 
 					  	<div class="jrnl_tab">
