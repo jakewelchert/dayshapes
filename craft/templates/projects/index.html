@@ -14,19 +14,24 @@
 {% set title = "projects" %}
 
 {% block content %}
-	<section class="copyblock black">
-		<div class="content">
-			<h4>Projects</h4>
-			<h2>Here's a collection of our past work. Projects range from small to large, no budget to big budget.</h2>
+	<section class="copyblock">
+		<div class="mainheadercontainer">
+			<div class="row">
+			<div class="two columns rule"></div>
+			<div class="nine columns offset-by-one">
+				<h4>Projects</h4>
+				<h2>Here's a collection of our past work. Projects range from small to large, no budget to big budget.</h2>
+			</div>
+			</div>
 		</div>
 	</section>
 
-	<section class="copyblock black">
+	<section class="projectindexcontainer black">
 		<div class='container'>
 			{% for entry in craft.entries.section('projects').find() %}
 			<div class="row animate">
-				<div class="label">
-					<h3 style="font-size: 100px;">{{ entry.title }}</h3>
+				<div class="projectslabel">
+					<h3>{{ entry.title }}</h3>
 					<h4>Identity / Collateral / Product Design</h4>
 				</div>
 				<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
@@ -36,7 +41,7 @@
 						<span class="view">View Project</span>
 						</h3>		        			        
 					</div>
-				    <img src='{{ entry.featuredImage[0].url }}'>
+				  <img src='{{ entry.featuredImage[0].url }}'>
 				</a>
 			</div>
 			{% endfor %}

@@ -58,10 +58,6 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
-  color: red;
-}
-
 .navicon-button {
   display: inline-block;
   position: relative;

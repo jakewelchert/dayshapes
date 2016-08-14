@@ -14,14 +14,17 @@
 }
 
 .copyblock {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    padding: 100px 30px 30px;
+    padding: 150px 30px 30px;
 }
 
+  @media (max-width: 500px) {
+  .copyblock-index {
+    padding-top: 50px
+  }
+  }
+
 .copyblock-sm {
-    padding: 50px 30px 30px;
+    padding: 30px 30px;
 }
 
   .copyblock h2 {
@@ -30,7 +33,11 @@
 
 @media (min-width: 500px) {
   .copyblock {
-  padding: 6em 100px;
+  padding: 6em 50px 100px;
+  }
+
+  .copyblock-sm {
+    padding: 100px 50px;
   }
 
   .copyblock h2 {
@@ -44,7 +51,7 @@
   }
 
   .copyblock-sm {
-  padding: 4em 0px 2em;
+    padding: 200px 50px;
   }
 
   .copyblock h2 {
@@ -52,7 +59,18 @@
   }
 }
 
+.contact {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
 
+.contact-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
 
 .full {
   padding: 100px 0;
@@ -62,7 +80,6 @@
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 0 30px;
   box-sizing: border-box; 
 }
 
@@ -73,12 +90,32 @@
   box-sizing: border-box; 
 }
 
-.bdr {
-  border-bottom: 1px solid #ddd;
+.projectindexcontainer {
+  padding: 60px 30px;
 }
 
-.container_home {
-  margin: 100px auto;
+  @media (min-width: 1200px) {
+    .projectindexcontainer {
+      padding: 200px 50px;
+    }
+  }
+
+.mainheadercontainer {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 1600px;
+}
+
+@media (min-width: 1200px) {
+.mainheadercontainer {
+  padding: 0 50px;
+}
+}
+
+.bdr {
+  border-bottom: 1px solid #ddd;
 }
 
 .row {
@@ -98,10 +135,6 @@
 
 /* For devices larger than 400px */
 @media (min-width: 400px) {
-  .container {
-    width: 85%;
-    padding: 0; 
-}
 }
 
 /* For devices larger than 550px */

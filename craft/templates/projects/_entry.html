@@ -17,27 +17,21 @@
 {% set title = "{{ entry.title }}" %}
 
 {% block content %}
-    <div class="interior_header" style="background-color: {{ entry.projectIntroColor }}">
-    	<div class="container">
-			<div class="row">
-				<div class="eight offset-by-two columns">
-					<h1>{{ entry.title }}</h1>
-					<p>{{ entry.projectIntro }}</p>
-				</div>
-			</div>
+    <div class="copyblock" style="background-color: {{ entry.projectIntroColor }}">
+    	<div class="mainheadercontainer">
+  			<div class="row">
+          <div class="two columns rule"></div>
+    			<div class="nine offset-by-one columns">
+    				<h2>{{ entry.title }}</h2>
+    				<p>{{ entry.projectIntro }}</p>
+    			</div>
+  			</div>
 		</div>
 		<div class="arrow_down">&darr;</div>
 	</div>
 
-<!-- 	<section class='animate' style="background-color: white">
-		<div class="container">
-			<div class="twelve columns">
-				{{ entry.body }}
-			</div>
-		</div>
-	</section>
- -->
-	<section class='animate' style="background-color: white">
+	<section class='projectcontainer animate' style="background-color: white">
+		<img src='{{ entry.projectImages[0].url }}'>
 		<img src='{{ entry.projectImages[1].url }}'>
 		<img src='{{ entry.projectImages[2].url }}'>
 		<img src='{{ entry.projectImages[3].url }}'>
@@ -45,33 +39,5 @@
 		<img src='{{ entry.projectImages[5].url }}'>
 		<img src='{{ entry.projectImages[6].url }}'>
 	</section>
-
-
-
-
-{% set options = {
-      'title': 'foo',
-      'url': 'http://google.com',
-      'content': {
-        'facebook': {
-          'item-type': 'image',
-          'value': 'http://img2.wikia.nocookie.net/__cb20130501121248/logopedia/images/f/fb/Facebook_icon_2013.svg',
-          'class': 'fb',
-          'size': {
-            'width': '40px',
-            'height': '40px'
-          }
-        },
-        'twitter': {
-          'item-type': 'text',
-          'value': 'Twitter',
-          'class': 'twitter',
-          'id': 'twitter'
-        },
-      }
-    }
-  %}
-
-{{ jSocialButtons('facebook|twitter|email', options) }}
 
 {% endblock %}

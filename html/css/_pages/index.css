@@ -5,6 +5,33 @@
   color: #fff;
 }
 
+
+.projectslabel {
+  position: relative;
+}
+
+  @media (min-width: 800px) {
+    .projectslabel {
+      position: absolute;
+      z-index: 1;
+      margin-top: 13%;
+      color: #fff;
+    }
+  }
+
+  .projectslabel h3:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
+
+
+@media (min-width: 1024px) {
+  .projectslabel h3 {
+    font-size: 100px;
+  }
+}
+
+
 .about {
   position: relative;
   background: url("../../img/mainlogo.gif") no-repeat center center;
@@ -77,10 +104,13 @@
   color: #fff;
 }
 
-.featured-work {
-  margin-bottom: 30px;
-}
-
+  @media (max-width: 799px) {
+    .featured-work {
+      margin-bottom: 60px;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 25px;
+    }
+  }
 
 .btn.light {
   display: none;
@@ -103,7 +133,7 @@
   }
 
   .featured-work {
-    margin-bottom: 130px;
+    margin-bottom: 150px;
   }
 
   .btn.light {
