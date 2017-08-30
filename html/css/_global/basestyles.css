@@ -30,8 +30,25 @@ article:last-child {
   display: none;
 }
 
+iframe {
+  width: 100%;
+}
+
 video {
   width: 100%;
   height: auto;
   max-height: 100%;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+main {
+  background-color: #fff;
 }

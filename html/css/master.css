@@ -18,10 +18,10 @@
 @import url(../css/_partials/footer.css);
 @import url(../css/_partials/body.css);
 @import url(../css/_partials/nav.css);
+@import url(../css/_partials/hamburgers.css);
 
 
 /*    Pages    */
 @import url(../css/_pages/index.css);
-@import url(../css/_pages/about.css);
-@import url(../css/_pages/interior.css);
-@import url(../css/_pages/journal.css);
+@import url(../css/_pages/contact.css);
+@import url(../css/_pages/projects.css);

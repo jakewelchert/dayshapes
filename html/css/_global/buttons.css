@@ -4,7 +4,7 @@ button {
   -webkit-transition: all 0.3s ease-in,all 0.35s ease-out;
   transition: all 0.3s ease-in,all 0.35s ease-out;
   border: none;
-  background: rgba(255,255,255,.8);
+  background: transparent;
   color: black;
   font-size: .6em;
   letter-spacing: 3px;
@@ -19,119 +19,5 @@ button {
 }
 
 button:hover {
-    background: black;
     color: #fff;
 }
-
-button.work {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-}
-
-button.all {
-    border: 1px solid #ddd;
-    display: block;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
-button.all:hover {
-    border-color: #000;
-}
-
-button.work {
-    font-size: .9em;
-    padding: 0 28px;
-}
-
-
-
-
-
-/*
-
-
-
-.btn:before {
-    font-size: 18px;
-    font-size: 1.125rem;
-}
-
-
-.btn:before, .btn:after {
-    width: 20%;
-}
-
-.btn:before {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    z-index: 1;
-    width: 65px;
-    color: #fff;
-    font-size: 14px;
-    font-size: 0.875rem;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transition: all 0.3s;
-}
-
-.icon-arrow-right:before {
-    content: '\e804';
-}
-
-.btn span {
-    display: inline-block;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
-}
-
-
-.btn {
-  position: relative;
-  padding: 18px 73px 18px 20px;
-  box-shadow: 0 3px 2px -2px rgba(0,0,0,0.3);
-  border-radius: 5px;
-  text-align: center;
-}
-
-.btn.blue {
-  background: #013a52;
-  color: #ff5539;
-}
-
-
-.btn.blue.white-text {
-    color: #fff;
-}
-
-
-.btn:after {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-.btn:before, .btn:after {
-    width: 53px;
-}
-
-.btn:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    width: 65px;
-    background: #ff5539;
-    content: '';
-    transition: all 0.3s;
-}
-
-.btn:hover:after {
-    width: 100%;
-}*/

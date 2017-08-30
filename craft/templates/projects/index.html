@@ -1,9 +1,9 @@
 {#
- # Project index template
+ # News index template
  # -------------------
  #
- # This template is loaded whenever http://example.com/projects is
- # requested, because it is located at projects/index.html in your
+ # This template is loaded whenever http://example.com/news is
+ # requested, because it is located at news/index.html in your
  # craft/templates/ folder.
  #
  # See this page for more details on how Craft routes requests:
@@ -11,63 +11,27 @@
  #}
 
 {% extends "_layout" %}
-{% set title = "projects" %}
 
 {% block content %}
-	<section class="copyblock">
-		<div class="mainheadercontainer">
-			<div class="row">
-			<div class="two columns rule"></div>
-			<div class="nine columns offset-by-one">
-				<h4>Projects</h4>
-				<h2>Here's a collection of our past work. Projects range from small to large, no budget to big budget.</h2>
-			</div>
-			</div>
-		</div>
-	</section>
 
-	<section class="projectindexcontainer black">
 		<div class='container'>
-			{% for entry in craft.entries.section('projects').find() %}
-			<div class="row animate">
-				<div class="projectslabel">
-					<h3>{{ entry.title }}</h3>
-					<h4>Identity / Collateral / Product Design</h4>
-				</div>
-				<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
-					<div class="caption">
-						<h3> 
-						<span class="arrow">→</span>
-						<span class="view">View Project</span>
-						</h3>		        			        
-					</div>
-				  <img src='{{ entry.featuredImage[0].url }}'>
-				</a>
-			</div>
-			{% endfor %}
+			<h1 class='project-intro'>Projects</h1>
+		
+			<ul class='grid-half'>
+				{# Fetch all of the entries related to this category #}
+				{% paginate craft.entries.relatedTo(category).section('projects') as pageInfo, pageEntries %}
+				{# Output them #}
+				{% for entry in pageEntries %}
+				<li>
+					<a href='{{ entry.url }}' title='{{ entry.title }}'>
+						{% set image = entry.featuredImage.first() %}
+						<img src='{{image.getUrl()}}' alt='{{ image.title }}'>
+						<h3>{{ entry.title }}</h3>
+						<p>View Project</p>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
 		</div>
-	</section>
-
-	<section class='row'>
-		<div class="fullsix pagination">
-			<a href="{{ url('journal') }}" {% if craft.request.firstSegment == 'projects' %}class="active"{% endif %}>
-				<div class="pagination_overlay">
-					<div class="container pagination-type">				
-					<h6>Journal</h6>
-					</div>
-				</div>
-			</a>
-		</div>
-
-		<div class="fullsix pagination">
-			<a href="{{ url('studio') }}" {% if craft.request.firstSegment == 'contact' %}class="active"{% endif %}>
-				<div class="pagination_overlay">
-					<div class="container pagination-type">				
-					<h6>Studio</h6>
-					</div>
-				</div>
-			</a>
-		</div>
-	</section>
 
 {% endblock %}

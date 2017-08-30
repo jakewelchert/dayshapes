@@ -21,79 +21,25 @@
 
 {% block content %}
 
-  	<div class="about">
-		<div class="arrow_down">&darr;</div>
-	</div>
-
-	<section class="copyblock copyblock-index">
-		<div class="container animate">
-			<h4>Hey there&mdash;</h4>
-			<h2>DayShapes is a hard-working, independent creative studio. We specialize in identity design and brand development, as well as web and product design.</h2>
-			<h4 class="all"><a href="{{ url('studio') }}" {% if craft.request.firstSegment == 'studio' %}class="active"{% endif %}><span class='underline'>Learn More about Us</span> &rarr;</a></h4>
+	<header class='flex-center'>
+		<div class='container'>
+	    <h4>DAYSHAPES</h4>			
+	    <h1>A web & design studio located in the midwest.</h1>
 		</div>
-
-	</section>
+	</header>
 
 	<section>
-		<div class="projectindexcontainer black">
-			<div class='container'>
-
-			<div class="row"><h4>Featured Projects&mdash;</h4></div>
-
-				{% for entry in craft.entries.section('projects').limit(6).find() %}
-				<div class="row animate">
-					<div class="projectslabel">
-						<h3>{{ entry.title }}</h3>
-						<h4>Identity / Collateral / Product Design</h4>
-					</div>
-					<a href="{{ entry.url }}" class="eight columns offset-by-four featured-work overlay transition-block">
-						<div class="caption">
-							<h3> 
-							<span class="arrow">→</span>
-							<span class="view">View Project</span>
-							</h3>		        			        
-						</div>
-					  <img src='{{ entry.featuredImage[0].url }}'>
-					</a>
-				</div>
-				{% endfor %}
-				<h4><a href="{{ url('projects') }}"><span class='underline'>View all projects</span> &rarr;</a></h4>
-			</div>
-		</div>
-	</section>
-
-
-	<!--      JOURNAL      -->
-	<section class='copyblock-sm lightgray'>
-		<div class="row latest journal_header">
-			<div class="eight offset-by-two columns animate">
-				<h4>Journal</h4>						
-				<h2>Here's what we've been up to.</h2>
-			</div>
+		<div class='row'>
+			<h4>Featured Projects&mdash;</h4>
 		</div>
 
-		<div class="container journal_inner">
-			{% for entry in craft.entries.section('journal').limit(3).find() %}
-
-			<a href="{{ entry.url }}">
-				<div class='jrnl_preview2 animate row'>
-
-					<div class="jrnl_preview2-image" style="background-image: url({{ entry.featuredImage[0].url }})"></div>
-
-				  	<div class="jrnl_tab">
-						<h4>{{ entry.postDate.format('F d, Y') }}</h4>
-				    	<h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
-				    	<p>{{ entry.summary }}</p>        
-						<h4><a href="{{ entry.url }}"><span class='underline'>Read The Story</span> &rarr;</a></h4>
-				  	</div>
-
-				</div>
+		<div class='container'>
+			{% for entry in craft.entries.section('projects').limit(6).find() %}
+			<a href='{{ entry.url }}' class='row animate'>
+				<img src='{{ entry.featuredImage[0].url }}'>
 			</a>
-
 			{% endfor %}
-			
-			<h4><a href="{{ url('journal') }}"><span class='underline'>View all journal entries</span> &rarr;</a></h4>
 		</div>
-
 	</section>
+
 {% endblock %}

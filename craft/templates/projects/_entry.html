@@ -1,43 +1,176 @@
 {#
- # Projects entry template
+ # Work entry template
  # -------------------
  #
- # This template gets loaded whenever a projects entry’s URL is
- # requested. That’s because the projects section’s Template setting is
- # set to “projects/_entry”, the path to this template.
+ # This template gets loaded whenever a News entry’s URL is
+ # requested. That’s because the News section’s Template setting is
+ # set to “news/_entry”, the path to this template.
  #
  # When this template is loaded, it will already have an ‘entry’
- # variable, set to the requested projects entry.
+ # variable, set to the requested News entry.
  #
  # See this page for more details on how Craft routes requests:
  # http://craftcms.com/docs/routing
  #}
 
 {% extends "_layout" %}
-{% set title = "{{ entry.title }}" %}
 
 {% block content %}
-    <div class="copyblock" style="background-color: {{ entry.projectIntroColor }}">
-    	<div class="mainheadercontainer">
-  			<div class="row">
-          <div class="two columns rule"></div>
-    			<div class="nine offset-by-one columns">
-    				<h2>{{ entry.title }}</h2>
-    				<p>{{ entry.projectIntro }}</p>
-    			</div>
-  			</div>
+	<div class='container'>
+		<div class='project-intro'>
+			<h3>{{ entry.title }}</h3>
+			{{ entry.workIntroduction }}
 		</div>
-		<div class="arrow_down">&darr;</div>
 	</div>
 
-	<section class='projectcontainer animate' style="background-color: white">
-		<img src='{{ entry.projectImages[0].url }}'>
-		<img src='{{ entry.projectImages[1].url }}'>
-		<img src='{{ entry.projectImages[2].url }}'>
-		<img src='{{ entry.projectImages[3].url }}'>
-		<img src='{{ entry.projectImages[4].url }}'>
-		<img src='{{ entry.projectImages[5].url }}'>
-		<img src='{{ entry.projectImages[6].url }}'>
-	</section>
 
+	{% for asset in entry.fullWidthImage %}
+		<img src='{{ asset.url }}' alt=''>
+	{% endfor %}
+
+
+	<div class='project'>
+	{% for block in entry.workContent %}
+		{% if block.type == "Slideshow" %}
+			<section class='row index-featuredwork center slider'>
+				{% for asset in block.SlideshowImage %}
+					<img src='{{ asset.url }}' alt=''>
+				{% endfor %}
+			</section>
+
+
+	   	{% elseif block.type == "bottomBorder" %}
+			<div class='bottomborder'></div>
+
+
+	   	{% elseif block.type == "copy" %}
+			<div class='row'>
+				<div class='eight columns description offset-by-two'>
+					{{ block.copy }}
+				</div>
+			</div>
+
+
+	   	{% elseif block.type == "containedImage" %}
+			<div class='row'>
+			{% for asset in block.containedImage %}
+				<img src='{{ asset.url }}' alt=''>
+			{% endfor %}
+			</div>
+
+
+		{% elseif block.type == "tencolumnImage" %}
+			<div class='row'>
+				<div class='ten columns offset-by-one'>
+				{% for asset in block.tencolumnImage %}
+					<img src='{{ asset.url }}' alt=''>
+				{% endfor %}
+				</div>
+			</div>
+
+
+		{% elseif block.type == "eightcolumnImage" %}
+			<div class='row'>
+				<div class='eight columns offset-by-two'>
+				{% for asset in block.eightcolumnImage %}
+					<img src='{{ asset.url }}' alt=''>
+				{% endfor %}
+				</div>
+			</div>
+
+
+	   	{% elseif block.type == "twoImages" %}
+			<div class='row'>
+				{% for asset in block.twoImageLeft %}
+					<img class='six columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+
+				{% for asset in block.twoImageRight %}
+					<img class='six columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+			</div>
+
+
+	   	{% elseif block.type == "threeImages" %}
+			<div class='row'>
+				{% for asset in block.threeImageLeft %}
+					<img class='four columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+
+				{% for asset in block.threeImageCenter %}
+					<img class='four columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+
+				{% for asset in block.threeImageRight %}
+					<img class='four columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+			</div>
+
+
+	   	{% elseif block.type == "fourImages" %}
+			<div class='row'>
+				{% for asset in block.fourImageOne %}
+					<img class='three columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+
+				{% for asset in block.fourImageTwo %}
+					<img class='three columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+
+				{% for asset in block.fourImageThree %}
+					<img class='three columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+
+				{% for asset in block.fourImageFour %}
+					<img class='three columns' src='{{ asset.url }}' alt=''></li>
+				{% endfor %}
+			</div>
+
+
+	   	{% elseif block.type == "video" %}
+			<div class='row'>
+				<div class='ten columns offset-by-one'>
+					{{ block.video }}
+				</div>
+			</div>
+
+
+	   	{% elseif block.type == "copyAndImageLeft" %}
+			<div class='row'>
+				{% for asset in block.image %}
+				<div class='six columns'>
+					<img src='{{ asset.url }}'>
+				</div>
+				{% endfor %}
+				<div class='six columns'>
+					{{ block.descriptionCopy }}
+				</div>
+			</div>
+
+
+		{% elseif block.type == "copyAndImageRight" %}
+			<div class='row'>
+				<div class='six columns'>
+					<p>{{ block.descriptionCopy }}</p>
+				</div>
+				{% for asset in block.image %}
+				<div class='six columns'>
+					<img src='{{ asset.url }}'>
+				</div>
+				{% endfor %}
+			</div>
+
+		{% endif %}
+	{% endfor %}
+
+	{% if entry.workCredits %}
+		<div class='row'>
+		<div class='six columns offset-by-three project-credits'>
+			{{ entry.workCredits }}
+		</div>
+		</div>
+	{% endif %}
+
+	</div>
+	
 {% endblock %}
